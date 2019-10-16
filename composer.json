@@ -1,0 +1,25 @@
+{
+    "name": "digitlimit/place",
+    "description": "Place is a wrapper for Google Places API, a service that returns information about places using HTTP requests",
+    "keywords": ["laravel", "google", "places", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mbah Emeka",
+            "email": "frankemeks77@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Digitlimit\\Place": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
