@@ -1,9 +1,8 @@
 <?php
 
 namespace Digitlimit\Place;
-
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Digitlimit\Place\Contracts\Factory;
 
 class PlaceServiceProvider extends ServiceProvider
 {
@@ -21,9 +20,19 @@ class PlaceServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('digitlimit.place', function ($app) {
-            return new Place();
+        $this->app->singleton(Factory::class, function ($app) {
+            return new PlaceManager($app);
         });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [Factory::class];
     }
 
     /**

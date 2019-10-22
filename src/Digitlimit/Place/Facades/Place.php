@@ -2,16 +2,17 @@
 
 namespace Digitlimit\Place\Facades;
 use Illuminate\Support\Facades\Facade;
+use Digitlimit\Place\Contracts\Factory;
 
 class Place extends Facade
 {
     /**
-     * Get the binding in the IoC container.
+     * Get the registered name of the component.
      *
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'digitlimit.place';
+        return Factory::class;
     }
 }
