@@ -7,7 +7,18 @@ use Illuminate\Http\Request;
 
 abstract class AbstractProvider
 {
+    /**
+     * Complete API response
+     * @var
+     */
     protected $response;
+
+    /**
+     * Search results
+     *
+     * @var array
+     */
+    protected $results = [];
 
     /**
      * The HTTP request instance.
@@ -172,5 +183,14 @@ abstract class AbstractProvider
         }
 
         return $this->response;
+    }
+
+    protected function buildQuery(array $parameters)
+    {
+        if($parameters){
+            $this->with($parameters);
+        }
+
+        return $this->parameters;
     }
 }
