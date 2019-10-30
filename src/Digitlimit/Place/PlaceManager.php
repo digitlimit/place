@@ -85,5 +85,4 @@ class PlaceManager extends Manager implements Contracts\Factory
 
         throw new InvalidArgumentException('No driver found for '. $driver);
     }
-
 }

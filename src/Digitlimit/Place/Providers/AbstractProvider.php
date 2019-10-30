@@ -167,6 +167,12 @@ abstract class AbstractProvider
         return $this;
     }
 
+    /**
+     * Check if response has given parameter
+     *
+     * @param $parameter
+     * @return bool
+     */
     public function responseHas($parameter) : bool {
 
         if(is_array($this->response) && isset($this->response[$parameter])){
@@ -176,6 +182,12 @@ abstract class AbstractProvider
         return false;
     }
 
+    /**
+     * Fetch response
+     *
+     * @param null $parameter
+     * @return array
+     */
     public function getResponse($parameter=null){
 
         if(is_array($this->response) && isset($this->response[$parameter])){
@@ -185,6 +197,12 @@ abstract class AbstractProvider
         return $this->response;
     }
 
+    /**
+     * Build parameter query
+     *
+     * @param array $parameters
+     * @return array
+     */
     protected function buildQuery(array $parameters)
     {
         if($parameters){
